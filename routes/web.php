@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend');
 });
 
 route::get('halo',function(){
@@ -28,3 +28,41 @@ Route::get('blog', function () {
 Route::get('satu', function () {
 	return view('linktree');
 });
+
+
+
+// tugasssssssssssssssssss
+
+Route::get('pertama', function () {
+	return view('pertama');
+});
+
+Route::get('validasi1', function () {
+	return view('validasi1');
+});
+
+Route::get('object-position', function () {
+	return view('object-position');
+});
+
+Route::get('bootstrap1', function () {
+	return view('bootstrap1');
+});
+
+Route::get('js1', function () {
+	return view('js1');
+});
+
+Route::get('linktree', function () {
+	return view('linktree');
+});
+
+Route::get('index', function () {
+	return view('index');
+});
+
+Route::get('pertemuan4PR', function () {
+	return view('pertemuan4PR');
+});
+
+
