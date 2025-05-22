@@ -65,4 +65,15 @@ Route::get('pertemuan4PR', function () {
 	return view('pertemuan4PR');
 });
 
+Route::get('dosen', [dosenControllers::class, 'index']);
 
+Route::get('welcome', [dosenControllers::class, 'welcome']);
+
+Route::get('/pegawai/{nama}', [pegawaiControllers::class, 'index']);
+Route::get('/formulir', [pegawaiControllers::class, 'formulir']);
+Route::post('/formulir/proses', [pegawaiControllers::class,'proses']);
+
+// route blog
+Route::get('/blogs', [blogControllers::class, 'home']);
+Route::get('/blogs/tentang', [blogControllers::class, 'tentang']);
+Route::get('/blogs/kontak', [blogControllers::class,'kontak']);
