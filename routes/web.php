@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,15 +67,15 @@ Route::get('pertemuan4PR', function () {
 	return view('pertemuan4PR');
 });
 
-Route::get('dosen', [dosenControllers::class, 'index']);
+Route::get('dosen', [DosenController::class, 'index']);
 
-Route::get('welcome', [dosenControllers::class, 'welcome']);
+Route::get('welcome', [DosenController::class, 'welcome']);
 
-Route::get('/pegawai/{nama}', [pegawaiControllers::class, 'index']);
-Route::get('/formulir', [pegawaiControllers::class, 'formulir']);
-Route::post('/formulir/proses', [pegawaiControllers::class,'proses']);
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class,'proses']);
 
 // route blog
-Route::get('/blogs', [blogControllers::class, 'home']);
-Route::get('/blogs/tentang', [blogControllers::class, 'tentang']);
-Route::get('/blogs/kontak', [blogControllers::class,'kontak']);
+Route::get('/blogs', [BlogController::class, 'home']);
+Route::get('/blogs/tentang', [BlogController::class, 'tentang']);
+Route::get('/blogs/kontak', [BlogController::class,'kontak']);
