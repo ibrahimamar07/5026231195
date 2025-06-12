@@ -5,6 +5,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\LampuDBController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,7 @@ use App\Http\Controllers\PegawaiDBController;
 */
 
 Route::get('/', function () {
-    return view('frontend');
+    return view('template');
 });
 
 route::get('halo',function(){
@@ -81,6 +82,9 @@ Route::get('/blogs', [BlogController::class, 'home']);
 Route::get('/blogs/tentang', [BlogController::class, 'tentang']);
 Route::get('/blogs/kontak', [BlogController::class,'kontak']);
 
+route::get("/frontend", function(){
+	return view('frontend');
+});
 //route pegawaiDB
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
 Route::get('tambah', [PegawaiDBController::class, 'tambah']);
@@ -89,4 +93,14 @@ Route::get('/pegawai/edit/{id}',[PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 
-Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+Route::get('/cari', [PegawaiDBController::class, 'cari']);
+
+//route lampuDB
+Route::get('/lampu', [LampuDBController::class, 'index']);
+Route::get('/tambah/lampu', [LampuDBController::class, 'tambah']);
+Route::post('/lampu/store', [LampuDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::get('/lampu/edit/{id}',[LampuDBController::class, 'edit']);
+Route::post('/lampu/update',[LampuDBController::class, 'update']);
+Route::get('/lampu/hapus/{id}', [LampuDBController::class, 'hapus']);
+
+Route::get('/lampu/cari', [LampuDBController::class, 'cari']);

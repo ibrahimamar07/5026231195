@@ -1,7 +1,6 @@
 @extends('template')
 
 @section('content')
-    <h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
     <h3>Tambah Pegawai</h3>
 
     <a href="/pegawai">Kembali</a>
