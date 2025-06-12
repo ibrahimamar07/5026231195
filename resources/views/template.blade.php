@@ -37,6 +37,9 @@
                 <a class="nav-link" href="/lampu">Tugas CRUD</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/karyawan">Karyawan</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">EAS</a>
             </li>
             <li class="nav-item">

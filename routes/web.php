@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\LampuDBController;
+use App\Http\Controllers\KaryawanDBController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -104,3 +105,9 @@ Route::post('/lampu/update',[LampuDBController::class, 'update']);
 Route::get('/lampu/hapus/{id}', [LampuDBController::class, 'hapus']);
 
 Route::get('/lampu/cari', [LampuDBController::class, 'cari']);
+
+//route karywan
+Route::get('/karyawan', [KaryawanDBController::class, 'index']);
+Route::get('/tambah/karyawan', [KaryawanDBController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);
