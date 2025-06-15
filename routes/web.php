@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\LampuDBController;
 use App\Http\Controllers\KaryawanDBController;
+use App\Http\Controllers\PageCounterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -111,3 +112,6 @@ Route::get('/karyawan', [KaryawanDBController::class, 'index']);
 Route::get('/tambah/karyawan', [KaryawanDBController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
 Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);
+
+//code teman kodeA1
+Route::get('/A1', [PageCounterController::class, 'index']);
