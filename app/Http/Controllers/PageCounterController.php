@@ -1,25 +1,15 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PageCounterController extends Controller
 {
     public function index()
     {
-        // Tambah nilai jumlah +1
-        DB::table('pagecounter')
-            ->where('ID', 1)
-            ->update([
-                'Jumlah' => DB::raw('Jumlah + 1')
-            ]);
-
-        // Ambil data jumlah setelah di-update
-        $jumlah = DB::table('pagecounter')
-            ->where('ID', 1)
-            ->value('Jumlah');
-
-        // Kirim ke view
-        return view('pagecounter', ['jumlah' => $jumlah]);
+        DB::table('pagecounter')->where('ID', 1)->increment('Jumlah');
+        $jumlah = DB::table('pagecounter')->where('ID', 1)->value('Jumlah');
+        return view('pagecounter', compact('jumlah'));
     }
 }
