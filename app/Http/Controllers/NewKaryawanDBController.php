@@ -19,15 +19,27 @@ class NewKaryawanDBController extends Controller
 
 public function store(Request $request)
 {
-	DB::table('newkaryawan')->insert([
-		'NIP' => $request->NIP,
-		'nama' => $request->nama,
-		'pangkat' => $request->pangkat,
-		'gaji' => $request->gaji
-	]);
-	return redirect('/eas');
+    // Cek apakah NIP sudah ada
+    $existing = DB::table('newkaryawan')->where('NIP', $request->NIP)->first();
 
+    if ($existing) {
+        // Jika NIP sudah ada, redirect kembali ke form dengan pesan error
+        return redirect('/tambah/newkaryawan')
+            ->with('error', 'NIP sudah digunakan, silakan gunakan NIP yang lain.')
+            ->withInput(); // agar data sebelumnya tidak hilang
+    }
+
+    // Jika tidak ada, lakukan insert
+    DB::table('newkaryawan')->insert([
+        'NIP' => $request->NIP,
+        'nama' => $request->nama,
+        'pangkat' => $request->pangkat,
+        'gaji' => $request->gaji
+    ]);
+
+    return redirect('/eas');
 }
+
 
 public function hapus($id)
 {

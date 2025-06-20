@@ -120,5 +120,5 @@ Route::get('/A1', [PageCounterController::class, 'index']);
 // EAS 
 Route::get('/eas', [NewKaryawanDBController::class, 'index']);
 Route::get('/tambah/newkaryawan', [NewKaryawanDBController::class, 'tambah']);
-Route::get('/newkaryawan/store', [NewKaryawanDBController::class, 'store']);
+Route::post('/newkaryawan/store', [NewKaryawanDBController::class, 'store']);
 Route::get('/newkaryawan/hapus/{id}', [NewKaryawanDBController::class, 'hapus']);

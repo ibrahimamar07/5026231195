@@ -7,8 +7,19 @@
         </div>
         <div class="card-body">
             <a href="/eas" class="btn btn-secondary mb-3">← Kembali</a>
+            @if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
 
-            <form action="/newkaryawan/store" method="GET">
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+            <form action="/newkaryawan/store" method="post">
                 {{ csrf_field() }}
 
                 <div class="mb-3">
