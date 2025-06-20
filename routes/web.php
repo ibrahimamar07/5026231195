@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\LampuDBController;
 use App\Http\Controllers\KaryawanDBController;
 use App\Http\Controllers\PageCounterController;
+use App\Http\Controllers\NewKaryawanDBController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -115,3 +116,9 @@ Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);
 
 //code teman kodeA1
 Route::get('/A1', [PageCounterController::class, 'index']);
+
+// EAS 
+Route::get('/eas', [NewKaryawanDBController::class, 'index']);
+Route::get('/tambah/newkaryawan', [NewKaryawanDBController::class, 'tambah']);
+Route::get('/newkaryawan/store', [NewKaryawanDBController::class, 'store']);
+Route::get('/newkaryawan/hapus/{id}', [NewKaryawanDBController::class, 'hapus']);

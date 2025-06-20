@@ -32,7 +32,7 @@
         </table>
 
         
-        {{ $karyawan->links() }}
+
     </div>
     <div class="d-flex justify-content-between align-items-center mb-3">
         <a href="/tambah/karyawan" class="btn btn-primary">+ Tambah karyawan Baru</a>
